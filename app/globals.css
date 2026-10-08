@@ -1,1 +1,114 @@
 @import "tailwindcss";
+
+@theme inline {
+  --color-bg: #0a0a0b;
+  --color-surface: #111113;
+  --color-surface-2: #17171a;
+  --color-line: #222226;
+  --color-line-strong: #34343a;
+  --color-fg: #ededed;
+  --color-muted: #8a8a93;
+  --color-accent: #4c8df6;
+  --color-accent-soft: rgb(76 141 246 / 0.14);
+
+  --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    background: var(--color-bg);
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* Capa "components": las utilidades de Tailwind (text-accent, normal-case...) deben poder pisar estas clases. */
+@layer components {
+  /* Etiquetas monoespaciadas: metadatos, números de sección, fechas. */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  /* Contenedor y ritmo vertical compartidos por todas las secciones. */
+  .container-x {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-x {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .section {
+    position: relative;
+    padding-block: 6rem;
+  }
+  @media (min-width: 768px) {
+    .section {
+      padding-block: 9rem;
+    }
+  }
+
+  /* Grilla de líneas finas de fondo. */
+  .grid-lines {
+    background-image: linear-gradient(
+      to right,
+      var(--color-line) 1px,
+      transparent 1px
+    );
+    background-size: calc(100% / 4) 100%;
+    mask-image: linear-gradient(to bottom, black, transparent 90%);
+  }
+
+  /* Subrayado animado para links de texto. */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1px;
+  }
+}
