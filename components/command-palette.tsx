@@ -172,7 +172,7 @@ export function CommandPaletteProvider({
         label: dict.actions.downloadCv,
         hint: "PDF",
         icon: <Download />,
-        run: external(profile.cvFile),
+        run: external(profile.cvFile[lang]),
       },
     ];
 

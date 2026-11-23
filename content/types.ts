@@ -78,8 +78,6 @@ export type Dictionary = {
     title: string;
     intro: string;
     groups: Record<StackGroupId, string>;
-    practicesTitle: string;
-    practices: string[];
   };
   education: {
     title: string;

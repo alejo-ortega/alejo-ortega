@@ -36,7 +36,7 @@ export const es = {
     lead: "Construyo productos web y móviles que escalan, y ayudo a los equipos a entregarlos bien.",
     body: [
       "Soy Desarrollador Full Stack con más de 4 años de experiencia en aplicaciones web y móviles. Trabajo con React, React Native, Java/Spring Boot y Node.js, y participo en frontend, backend y DevOps.",
-      "Hoy estoy enfocado en el liderazgo técnico: coordino al equipo, organizo las tareas y cuido la arquitectura y la calidad del código. Incorporo herramientas y agentes de IA para optimizar todo el proceso de desarrollo.",
+      "Hoy estoy enfocado en el liderazgo técnico: coordino al equipo y organizo las tareas. Trabajo junto a herramientas y agentes de IA en desarrollo, debugging, refactoring y documentación para optimizar todo el proceso.",
     ],
     facts: [
       { label: "Experiencia", value: "+4 años" },
@@ -68,8 +68,7 @@ export const es = {
           "Mantenimiento de servidores y gestión de entornos con Docker.",
           "Coordinación del equipo, organización de tareas y seguimiento del desarrollo.",
           "Implementación de mapas, geolocalización, formularios, dashboards e integraciones.",
-          "Creación de componentes reutilizables y mejoras de arquitectura y calidad de código.",
-          "Uso de agentes de IA para desarrollo, debugging, refactoring y documentación.",
+          "Incorporación de agentes de IA al flujo de trabajo del equipo.",
         ],
       },
       {
@@ -193,8 +192,6 @@ export const es = {
       devops: "DevOps & Tools",
       ai: "IA",
     },
-    practicesTitle: "Prácticas",
-    practices: ["Debugging", "Refactoring", "Code Review"],
   },
   education: {
     title: "Formación e idiomas",

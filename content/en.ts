@@ -36,7 +36,7 @@ export const en = {
     lead: "I build web and mobile products that scale, and help teams ship them well.",
     body: [
       "I'm a Full Stack developer with 4+ years of experience in web and mobile applications. I work with React, React Native, Java/Spring Boot and Node.js, across frontend, backend and DevOps.",
-      "Right now I'm focused on technical leadership: I coordinate the team, organize tasks and look after architecture and code quality. I bring AI tools and agents into the workflow to streamline the whole development process.",
+      "Right now I'm focused on technical leadership: I coordinate the team and organize tasks. I work alongside AI tools and agents in development, debugging, refactoring and documentation to streamline the whole process.",
     ],
     facts: [
       { label: "Experience", value: "4+ years" },
@@ -68,8 +68,7 @@ export const en = {
           "Server maintenance and environment management with Docker.",
           "Team coordination, task organization and development follow-up.",
           "Implementing maps, geolocation, forms, dashboards and integrations.",
-          "Building reusable components and improving architecture and code quality.",
-          "Using AI agents for development, debugging, refactoring and documentation.",
+          "Bringing AI agents into the team's workflow.",
         ],
       },
       {
@@ -193,8 +192,6 @@ export const en = {
       devops: "DevOps & Tools",
       ai: "AI",
     },
-    practicesTitle: "Practices",
-    practices: ["Debugging", "Refactoring", "Code Review"],
   },
   education: {
     title: "Education & languages",

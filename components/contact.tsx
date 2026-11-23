@@ -5,7 +5,13 @@ import { ArrowUpRight, Download } from "./icons";
 import { Reveal } from "./reveal";
 import { SectionHeader } from "./section-header";
 
-export function Contact({ dict }: { dict: Dictionary["contact"] }) {
+export function Contact({
+  dict,
+  cvHref,
+}: {
+  dict: Dictionary["contact"];
+  cvHref: string;
+}) {
   const links = [
     { label: dict.links.linkedin, href: profile.linkedin, handle: "/in/alejo-ortega" },
     { label: dict.links.github, href: profile.github, handle: "@alejo-ortega" },
@@ -60,7 +66,7 @@ export function Contact({ dict }: { dict: Dictionary["contact"] }) {
               ))}
               <Reveal as="li" delay={0.18}>
                 <a
-                  href={profile.cvFile}
+                  href={cvHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center justify-between gap-6 border-y border-line py-6 transition-colors hover:text-accent"

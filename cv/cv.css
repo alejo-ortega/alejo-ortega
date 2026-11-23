@@ -1,0 +1,322 @@
+/* CV — A4, una página. Mismos tokens que el portfolio, en versión clara. */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+:root {
+  --ink: #0a0a0b;
+  --body: #2a2a2f;
+  --muted: #5b5b65;
+  --line: #d9d9de;
+  --accent: #2f6fe4;
+  --sans: "Instrument Sans", system-ui, sans-serif;
+  --serif: "Instrument Serif", Georgia, serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  width: 210mm;
+  background: #fff;
+  color: var(--body);
+  font-family: var(--sans);
+  font-size: 9pt;
+  line-height: 1.42;
+  font-kerning: normal;
+  /* Un espacio apenas más ancho: los extractores de texto (ATS) separan bien las palabras. */
+  word-spacing: 0.05em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 11mm 14mm 9mm;
+}
+
+/* ---------- Cabecera ---------- */
+.header {
+  display: grid;
+  grid-template-columns: 1fr 29mm;
+  gap: 8mm;
+  align-items: end;
+}
+
+.name {
+  font-size: 37pt;
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+}
+
+.name span {
+  display: block;
+}
+
+.name .last {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+}
+
+.role {
+  margin-top: 4.5mm;
+  font-family: var(--mono);
+  font-size: 7.8pt;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.meta {
+  margin-top: 1.6mm;
+  font-family: var(--mono);
+  font-size: 7pt;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.photo {
+  width: 29mm;
+  height: 29mm;
+  border-radius: 2.6mm;
+  object-fit: cover;
+  object-position: 50% 12%;
+  align-self: start;
+}
+
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+  margin-top: 5mm;
+  padding: 2.4mm 0;
+  border-top: 0.4pt solid var(--ink);
+  border-bottom: 0.4pt solid var(--line);
+  font-family: var(--mono);
+  font-size: 7.3pt;
+  color: var(--ink);
+}
+
+.contacts a {
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* ---------- Cuerpo ---------- */
+.body {
+  display: grid;
+  grid-template-columns: 1fr 59mm;
+  column-gap: 8mm;
+  margin-top: 5.2mm;
+}
+
+.side {
+  padding-left: 7mm;
+  border-left: 0.4pt solid var(--line);
+}
+
+section + section {
+  margin-top: 5mm;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 2.2mm;
+  margin-bottom: 2.8mm;
+  font-family: var(--mono);
+  font-size: 7.2pt;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h2 .n {
+  color: var(--accent);
+}
+
+h2::after {
+  content: "";
+  flex: 1;
+  height: 0.4pt;
+  background: var(--line);
+}
+
+.summary {
+  font-size: 9.3pt;
+  line-height: 1.46;
+  color: var(--ink);
+}
+
+/* ---------- Experiencia ---------- */
+.job + .job {
+  margin-top: 3.5mm;
+}
+
+.job-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4mm;
+}
+
+.job h3 {
+  font-size: 10pt;
+  font-weight: 600;
+  word-spacing: 0.04em;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.period {
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 6.9pt;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.company {
+  margin: 0.3mm 0 1.3mm;
+  word-spacing: 0.12em; /* evita que los extractores de texto pierdan los espacios de la serif */
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 11pt;
+  line-height: 1.2;
+  color: var(--accent);
+}
+
+.job li {
+  display: flex;
+  gap: 2.2mm;
+  margin-top: 0.6mm;
+}
+
+.job li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 2.4mm;
+  height: 0.4pt;
+  margin-top: 0.58em;
+  background: var(--muted);
+}
+
+/* ---------- Lateral ---------- */
+.group + .group {
+  margin-top: 2.2mm;
+}
+
+.group-label {
+  margin-bottom: 1.1mm;
+  font-family: var(--mono);
+  font-size: 6.4pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1mm;
+}
+
+.chips li {
+  padding: 0.35mm 2mm;
+  border: 0.4pt solid var(--line);
+  border-radius: 99px;
+  font-size: 7.4pt;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.edu li + li {
+  margin-top: 2.2mm;
+}
+
+.edu .t {
+  font-size: 8.3pt;
+  font-weight: 500;
+  line-height: 1.32;
+  color: var(--ink);
+}
+
+.edu .i {
+  word-spacing: 0.12em;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 9pt;
+  color: var(--accent);
+}
+
+.langs li {
+  display: flex;
+  justify-content: space-between;
+  gap: 3mm;
+  padding: 0.9mm 0;
+  font-size: 8.3pt;
+}
+
+.langs .l {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.langs .v {
+  text-align: right;
+  color: var(--muted);
+}
+
+.approach {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2mm 6mm;
+}
+
+.approach li {
+  display: flex;
+  gap: 2mm;
+  font-size: 8.6pt;
+  line-height: 1.38;
+}
+
+.approach li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 2mm;
+  height: 0.4pt;
+  margin-top: 0.62em;
+  background: var(--accent);
+}

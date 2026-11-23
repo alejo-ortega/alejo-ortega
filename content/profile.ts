@@ -8,7 +8,11 @@ export const profile = {
   whatsapp: "https://wa.me/5492612136449",
   github: "https://github.com/alejo-ortega",
   linkedin: "https://linkedin.com/in/alejo-ortega",
-  cvFile: "/Alejo-Ortega-CV.pdf",
+  /** PDF del CV por idioma; se generan con `npm run cv`. */
+  cvFile: {
+    es: "/Alejo-Ortega-CV-ES.pdf",
+    en: "/Alejo-Ortega-CV-EN.pdf",
+  },
   timeZone: "America/Argentina/Mendoza",
   /** Cambiar a false para ocultar el punto verde "Disponible". */
   available: true,

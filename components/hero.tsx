@@ -5,7 +5,13 @@ import { MendozaClock } from "./mendoza-clock";
 import { MaskLine, Reveal } from "./reveal";
 import { Spotlight } from "./spotlight";
 
-export function Hero({ dict }: { dict: Dictionary["hero"] }) {
+export function Hero({
+  dict,
+  cvHref,
+}: {
+  dict: Dictionary["hero"];
+  cvHref: string;
+}) {
   return (
     <Spotlight>
       <section
@@ -61,7 +67,7 @@ export function Hero({ dict }: { dict: Dictionary["hero"] }) {
                 <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
               <a
-                href={profile.cvFile}
+                href={cvHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-12 items-center gap-2 rounded-full border border-line-strong px-6 text-sm font-medium transition-colors hover:border-muted hover:bg-surface"

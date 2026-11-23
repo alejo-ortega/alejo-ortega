@@ -8,6 +8,7 @@ import { Hero } from "@/components/hero";
 import { Stack } from "@/components/stack";
 import { Work } from "@/components/work";
 import { getDictionary } from "@/content";
+import { profile } from "@/content/profile";
 import { hasLocale } from "@/lib/i18n";
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
@@ -18,13 +19,13 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   return (
     <>
       <main id="main">
-        <Hero dict={dict.hero} />
+        <Hero dict={dict.hero} cvHref={profile.cvFile[lang]} />
         <About dict={dict.about} />
         <Experience dict={dict.experience} />
         <Work dict={dict.work} />
         <AiSection dict={dict.ai} />
         <Stack stack={dict.stack} education={dict.education} />
-        <Contact dict={dict.contact} />
+        <Contact dict={dict.contact} cvHref={profile.cvFile[lang]} />
       </main>
       <Footer dict={dict.footer} />
     </>

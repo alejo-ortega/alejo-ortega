@@ -22,7 +22,7 @@ export function Stack({
             <Reveal
               key={id}
               delay={i * 0.04}
-              className="grid gap-4 border-t border-line py-7 md:grid-cols-[12rem_1fr] md:gap-10"
+              className="grid gap-4 border-t border-line py-7 last:border-b md:grid-cols-[12rem_1fr] md:gap-10"
             >
               <h3 className="label md:pt-3">{stack.groups[id]}</h3>
               <ul className="flex flex-wrap gap-2.5">
@@ -37,19 +37,6 @@ export function Stack({
               </ul>
             </Reveal>
           ))}
-          <Reveal className="grid gap-4 border-y border-line py-7 md:grid-cols-[12rem_1fr] md:gap-10">
-            <h3 className="label md:pt-3">{stack.practicesTitle}</h3>
-            <ul className="flex flex-wrap gap-2.5">
-              {stack.practices.map((practice) => (
-                <li
-                  key={practice}
-                  className="rounded-full bg-surface-2 px-4 py-2 text-sm md:text-base"
-                >
-                  {practice}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
         </div>
 
         <div id="education" className="mt-24 md:mt-32">
